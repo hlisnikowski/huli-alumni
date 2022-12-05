@@ -17,9 +17,11 @@ TODO App requires [Node.js](https://nodejs.org/) v16+ to run.
 	spring.datasource.password=password
 ```
 
->  **INFO**  : On the Backend side, ENV file is optional. 
->  **INFO**  : Fronted communicate trough the axios on "http://localhost:8080/api" *(./utils/Api.tsx)* 
-> **INFO**  : Backend has DB initialization with this user and few test todos.
+> **Note**  : On the Backend side, ENV file is optional. 
+
+> **Note**  : Fronted communicate trough the axios on "http://localhost:8080/api" *(./utils/Api.tsx)*
+
+> **Note**  : Backend has DB initialization with this user and few test todos.
 >  `` email : test@seznam.cz, password: 1234567``
 
 
@@ -46,3 +48,11 @@ or
 | Backend| Java, Spring Boot |
 
 ## Preview
+```
+LOGIN
+```
+![login](login.png)
+```
+TODOS
+```
+![todo](todo.png)
