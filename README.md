@@ -8,7 +8,7 @@ Welcome to my page, my name is Miroslav and I'm a fresh alumni of Green Fox Acad
 <a href="mailto: hlisnikowski.miroslav@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
 
 ## &rarr; [Coding projects](https://github.com/green-fox-academy/definitions/tree/master/project-phase/huli/coding-projects)
-<img src="https://img.shields.io/badge/PROJECT%20-SOON-1C70A7?style=for-the-badge&logo=github&logoColor=white">
+<a href="https://github.com/hlisnikowski/huli-alumni/tree/master/todo_app"><img src="https://img.shields.io/badge/PROJECT%20-SOON-1C70A7?style=for-the-badge&logo=github&logoColor=white"></a>
 
 ## &rarr; [Interview prep](https://github.com/green-fox-academy/teaching-materials/tree/master/interview)
 
