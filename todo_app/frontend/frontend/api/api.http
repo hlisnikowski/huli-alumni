@@ -1,0 +1,24 @@
+
+@url = http://localhost:8080
+POST {{url}}/api/login
+Content-Type: application/json
+
+{
+    "email":"mirko@seznam.cz",
+    "password":"1234567"
+}
+###
+
+POST {{url}}/api/register
+Content-Type: application/json
+
+{
+    "username":"mirek",
+    "email":"mirko@seznam.cz",
+    "password":"1234567"
+}
+
+###
+
+GET {{url}}/api/user
+Authorization: Bearer eyJhbGciOiJIUzUMiJ9.eyJqdGkiOiJ1c2wi3ViIjoibWlya29Ac2V6bmFtLmN6IiwiaWF0IjoxNjY4OTg3NzY2LCJleHAiOjE2Njg5ODgzNjZ9.pW8Xlqju3aITYwrjHzWcSgdpBHAKOPv0wmxQUPLev0KCXakFN9I2EeGa-nn8o0UsctNE8KsfMgD1Z1E4_ke4Ww

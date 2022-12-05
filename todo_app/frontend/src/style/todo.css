@@ -1,0 +1,33 @@
+body {
+    background-size: 450px;
+   background-image: url("../assets/bg.jpg");
+}
+
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+}
+
+.c-card{
+    width: 20rem;
+    border:2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+@media screen and (min-width: 1200px) and (max-width:1400px){
+    .c-card {
+        width: 17rem;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .c-card {
+        border:3px solid black;
+        width: 100%;
+    }
+}
+
+
