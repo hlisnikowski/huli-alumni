@@ -9,7 +9,7 @@
 
 ## Setup
 TODO App requires [Node.js](https://nodejs.org/) v16+ to run.
-> **Warning**  : First setup MySQL database and then edit application.properties. 
+> **Warning**  : First setup MySQL database, then edit application.properties and edit schema in data.sql file. 
 ```sh 
 	# EDIT THOSE PROPS.
 	spring.datasource.url= 
