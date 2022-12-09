@@ -114,7 +114,7 @@ const Register = () => {
                             <Row>
                                 <Col>
                                     <Alert
-                                        style={{ marginTop: "10px", marginBottom: "5px" }}
+                                        style={{ textAlign: "center", marginTop: "10px", marginBottom: "5px" }}
                                         key="danger"
                                         variant="danger"
                                     >

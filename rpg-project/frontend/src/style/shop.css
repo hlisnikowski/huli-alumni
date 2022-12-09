@@ -1,0 +1,99 @@
+.shop-card{
+    background-image: url("../assets/wood.png");
+    width: 18rem;
+    height: 13rem;
+    border-radius: 3px;
+    margin: 20px 0 0 20px;
+    filter: drop-shadow(0px 3px 3px #222);
+    border: 3px solid black !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+}
+
+
+
+.shop-icon{
+    width: 45px;
+    background-image: url("../assets/wood.png");
+    margin : 10px 0 0 10px;
+    border: 3px solid black !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+    border-radius: 5px;
+    filter: drop-shadow(0px 3px 3px #222);
+ 
+}
+
+.shop-info{
+    background-color: #b97e53;
+    border-radius: 3px;
+    margin: 10px;
+    border: 3px solid black !important;
+    width: 93%;
+    height: 115px;
+    box-shadow:inset 1px 0px 28px 4px #000000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-info p{
+    
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.shop-card-top{
+    display:flex;
+}
+
+.shop-name{
+    color: black;
+    margin: 8px 0 0 5px;
+}
+
+.shop-chain{
+    width: auto;
+    height: 3rem;
+    margin-top: 2px;
+    margin-left: 20px;
+    background-image: url("../assets/chains.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shop-buy{
+    display: flex;
+    background-image: url("../assets/wood.png");
+    width: 18rem;
+    height: 4rem;
+    margin: 0px 0 0 20px;
+    filter: drop-shadow(0px 3px 3px #222);
+    border: 3px solid black !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+}
+
+.btn-buy{
+    margin-top: 5px;
+    width: 8rem !important;
+}
+
+.btn-buy:hover{
+    box-shadow:inset 0px 0px 8px 0.01em #000000;
+}
+.coins{
+    font-size: 19px;
+    margin-top: 10px;
+    margin-right: 5px;
+    display: flex;
+    color: #050505;
+
+}
+
+.coins img {
+    width: 34px;
+    height: 34px;
+    filter: drop-shadow(0px 5px 5px #222);
+
+}
+

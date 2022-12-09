@@ -42,7 +42,7 @@ const Login = () => {
             })
             .catch((err) => {
                 console.log(err);
-                setError(err.response.data);
+                setError(err.response.data.message);
             });
     };
 
@@ -109,7 +109,11 @@ const Login = () => {
                         {error.length > 0 && (
                             <Row>
                                 <Col>
-                                    <Alert style={{ marginTop: "10px" }} key="danger" variant="danger">
+                                    <Alert
+                                        style={{ textAlign: "center", marginTop: "10px" }}
+                                        key="danger"
+                                        variant="danger"
+                                    >
                                         {error}
                                     </Alert>
                                 </Col>
