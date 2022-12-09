@@ -1,0 +1,67 @@
+.inv-title{
+    text-align: center;
+    font-size: 24px;
+    color: #5DDE87;
+    margin-top: 20px;
+    -webkit-text-stroke: 1px black;
+    filter: drop-shadow(0px 5px 5px #222);
+
+}
+
+.inv-equip{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    background-color:#ca9875 ;
+    margin-left: 7px;
+    border: 2px solid #1B0000;
+    width: 94%;
+    height: auto;
+    padding-bottom: 10px;
+    box-shadow:inset 1px 0px 28px 4px #000000;
+   
+}
+
+.inv-bag{
+    border-radius: 4px;
+    background-color:#ca9875 ;
+    margin-left: 7px;
+    border: 2px solid #1B0000;
+    width: 94%;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    align-content: flex-start; 
+    padding-bottom: 10px;
+    box-shadow:inset 1px 0px 28px 4px #000000;
+}
+
+.inv-equip-icon{
+    cursor: pointer;
+    width: 45px;
+    background-color: #865936;
+    border: 3px solid black !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+    border-radius: 5px;
+    filter: drop-shadow(0px 3px 3px #222); 
+}
+
+.inv-bag::-webkit-scrollbar {
+    display: none;
+  }
+
+.inv-slots{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    color: #5DDE87;
+    margin-top: 10px;
+    -webkit-text-stroke: 1px black;
+    filter: drop-shadow(0px 5px 5px #222);
+
+}
+
+.inv{
+
+}

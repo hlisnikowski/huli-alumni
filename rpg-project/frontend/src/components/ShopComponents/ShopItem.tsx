@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { getIcon } from "../../utils/ImageHelper";
 import { ShopItemMo } from "./Shop";
 
@@ -7,19 +7,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoins } from "@fortawesome/free-solid-svg-icons";
 import silverCoin from "../../assets/game/items/Misc/Silver_Coin.png";
 import goldenCoin from "../../assets/game/items/Misc/Golden_Coin.png";
+import Tooltip from "./Tooltip";
 
 const ShopItem = (item: ShopItemMo) => {
+    const [showTooltip, setShowTooltip] = useState(false);
+
+    const tooltip = () => {};
+
     return (
         <>
             <div className="shop-item">
                 <div className="shop-card">
                     <div className="shop-card-top">
-                        <img className="shop-icon" src={getIcon(item.id)} />
+                        <img
+                            onMouseEnter={() => setShowTooltip(true)}
+                            onMouseLeave={() => setShowTooltip(false)}
+                            className="shop-icon"
+                            src={getIcon(item.id)}
+                        />
+
                         <p className="shop-name">{item.item_name}</p>
                     </div>
 
                     <div className="shop-info">
-                        <p>Placeholder for item description.</p>
+                        <p>Placeholder for item description</p>
                     </div>
                 </div>
                 <div className="shop-chain"></div>
@@ -36,6 +47,11 @@ const ShopItem = (item: ShopItemMo) => {
                         <img src={silverCoin} alt="" />
                         <p className="silver">{item.silver}</p>
                     </div>
+                    {showTooltip && (
+                        <>
+                            <Tooltip />
+                        </>
+                    )}
                 </div>
             </div>
         </>

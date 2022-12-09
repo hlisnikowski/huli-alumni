@@ -19,5 +19,5 @@ LOGIN
 ```
 SHOP
 ```
-![shop](shop.png)
+![shop_v2](shop_v2.png)
 ```
