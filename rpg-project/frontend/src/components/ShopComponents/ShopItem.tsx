@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { getIcon } from "../../utils/ImageHelper";
-import { ShopItemMo } from "./Shop";
 
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoins } from "@fortawesome/free-solid-svg-icons";
 import silverCoin from "../../assets/game/items/Misc/Silver_Coin.png";
 import goldenCoin from "../../assets/game/items/Misc/Golden_Coin.png";
+import copperCoin from "../../assets/game/items/Misc/Copper_Coin.png";
+
 import Tooltip from "./Tooltip";
+import { getPrice, Item } from "../../utils/ItemHelper";
 
-const ShopItem = (item: ShopItemMo) => {
+const ShopItem = (item: Item) => {
     const [showTooltip, setShowTooltip] = useState(false);
-
+    const price = getPrice(item);
     const tooltip = () => {};
 
     return (
@@ -23,7 +25,7 @@ const ShopItem = (item: ShopItemMo) => {
                             onMouseEnter={() => setShowTooltip(true)}
                             onMouseLeave={() => setShowTooltip(false)}
                             className="shop-icon"
-                            src={getIcon(item.id)}
+                            src={getIcon(item)}
                         />
 
                         <p className="shop-name">{item.item_name}</p>
@@ -42,14 +44,14 @@ const ShopItem = (item: ShopItemMo) => {
                         </p>
                     </Button>
                     <div className="coins">
-                        <img src={goldenCoin} alt="" />
-                        <p className="gold">{item.gold}</p>
                         <img src={silverCoin} alt="" />
-                        <p className="silver">{item.silver}</p>
+                        <p className="gold">{price[1]}</p>
+                        <img src={copperCoin} alt="" />
+                        <p className="silver">{price[0]}</p>
                     </div>
                     {showTooltip && (
                         <>
-                            <Tooltip />
+                            <Tooltip item={item} top={"-234px"} left={"60px"} />
                         </>
                     )}
                 </div>

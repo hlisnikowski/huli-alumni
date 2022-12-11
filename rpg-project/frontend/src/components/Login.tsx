@@ -19,7 +19,7 @@ const Login = () => {
 
     useEffect(() => {
         if (loginSuccess) {
-            // navigate("/todo");
+            navigate("/user");
         }
     }, [loginSuccess]);
 
@@ -37,7 +37,7 @@ const Login = () => {
         })
             .then((res) => {
                 console.log(res.data);
-                localStorage.setItem("token", res.data);
+                localStorage.setItem("token", res.data.token);
                 setLoginSuccess(true);
             })
             .catch((err) => {

@@ -13,3 +13,17 @@ export const generateJWT = (user) => {
 
     return jwt.sign(userPayload, process.env.TKN_SECRET);
 };
+
+export const simpleHash = () => {
+    const s = "abcdefgj123456789";
+    return (
+        s
+            .split("")
+            .sort(function () {
+                return 0.5 - Math.random();
+            })
+            .join("") +
+        "i" +
+        Date.now()
+    );
+};

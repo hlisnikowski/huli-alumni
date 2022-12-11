@@ -14,6 +14,15 @@ class UserController {
             next(error);
         }
     }
+
+    async getInventory(req, res, next) {
+        try {
+            const data = await userService.getInventory(req.user);
+            res.json(data);
+        } catch (error) {
+            next(error);
+        }
+    }
 }
 
 const userController = new UserController(userService);

@@ -3,6 +3,7 @@ import userController from "../controllers/userController.js";
 
 const router = Router();
 
-router.get("/user", userController.getProfile);
+router.get("/", userController.getProfile);
+router.get("/inventory", userController.getInventory);
 
 export default router;

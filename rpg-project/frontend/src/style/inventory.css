@@ -9,8 +9,7 @@
 }
 
 .inv-equip{
-    display: flex;
-    flex-wrap: wrap;
+
     border-radius: 4px;
     background-color:#ca9875 ;
     margin-left: 7px;
@@ -23,6 +22,7 @@
 }
 
 .inv-bag{
+   
     border-radius: 4px;
     background-color:#ca9875 ;
     margin-left: 7px;
@@ -31,14 +31,14 @@
     height: 150px;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: scroll;
+   
     align-content: flex-start; 
     padding-bottom: 10px;
     box-shadow:inset 1px 0px 28px 4px #000000;
 }
 
 .inv-equip-icon{
-    cursor: pointer;
+    
     width: 45px;
     background-color: #865936;
     border: 3px solid black !important;

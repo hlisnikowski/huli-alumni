@@ -1,5 +1,8 @@
 import { BOOLEAN, INTEGER, STRING } from "sequelize";
 import db from "../config/db.js";
+import { EQUIP_TYPE, ITEM_TYPE } from "../utils/itemType.js";
+import Inventory from "./Inventory.js";
+import User from "./User.js";
 
 const Item = db.define(
     "item",
@@ -21,10 +24,15 @@ const Item = db.define(
         type: {
             type: INTEGER,
             allowNull: false,
-            defaultValue: 0,
+            defaultValue: ITEM_TYPE.MATERIAL,
+        },
+        subtype: {
+            type: INTEGER,
+            allowNull: false,
+            defaultValue: EQUIP_TYPE.NONE,
         },
         price: {
-            type: INTEGER,
+            type: INTEGER(9),
             allowNull: false,
             defaultValue: 0,
         },
@@ -32,4 +40,4 @@ const Item = db.define(
     { timestamps: false }
 );
 
-export default User;
+export default Item;

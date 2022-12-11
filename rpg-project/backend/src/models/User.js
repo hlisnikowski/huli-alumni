@@ -1,5 +1,7 @@
 import { BOOLEAN, STRING } from "sequelize";
 import db from "../config/db.js";
+import Inventory from "./Inventory.js";
+import Item from "./Item.js";
 
 const User = db.define("user", {
     username: {

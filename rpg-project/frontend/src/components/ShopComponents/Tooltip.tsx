@@ -1,10 +1,17 @@
 import React from "react";
 
 import "../../style/tooltip.css";
+import { Item } from "../../utils/ItemHelper";
 
-const Tooltip = () => {
+type TooltipProp = {
+    item: Item;
+    top: string;
+    left: string;
+};
+
+const Tooltip = ({ item, top, left }: TooltipProp) => {
     return (
-        <div className="item-tooltip">
+        <div style={{ left: left, top: top }} className="item-tooltip">
             <p className="shop-name tt-name">RED POTION</p>
             <div className="h-line" style={{ borderBottom: "3px solid #1B0000" }}></div>
             <div className="tt-desc">

@@ -1,7 +1,6 @@
 .item-tooltip{
-    position:fixed;
-    left : 60px;
-    top: -234px;
+
+    position:absolute;
     z-index: 1000 !important;
     background-image: url("../assets/wood.png");
     width: 225px;
