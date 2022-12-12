@@ -12,7 +12,7 @@ type TooltipProp = {
 const Tooltip = ({ item, top, left }: TooltipProp) => {
     return (
         <div style={{ left: left, top: top }} className="item-tooltip">
-            <p className="shop-name tt-name">RED POTION</p>
+            <p className="shop-name tt-name sh">{item.item_name}</p>
             <div className="h-line" style={{ borderBottom: "3px solid #1B0000" }}></div>
             <div className="tt-desc">
                 <p>Attack : 5</p>

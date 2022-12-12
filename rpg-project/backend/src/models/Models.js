@@ -1,6 +1,7 @@
 import Equipment from "./Equipment.js";
 import Inventory from "./Inventory.js";
 import Item from "./Item.js";
+import Shop from "./Shop.js";
 import User from "./User.js";
 
 // User model (the model that the function is being invoked on) is the source.
@@ -19,4 +20,9 @@ Item.hasMany(Equipment, {
 
 User.hasMany(Equipment);
 
-export { Item, User, Inventory, Equipment };
+Item.hasMany(Shop, {
+    sourceKey: "vnum",
+    foreignKey: "vnum",
+});
+
+export { Item, User, Inventory, Equipment, Shop };

@@ -20,6 +20,7 @@ const errorJsonResponse = (error, messageText) => {
 };
 
 export const errorHandler = (error, req, res, next) => {
+    console.log(error);
     let httpStatusCode, message;
     if (error instanceof ResponseError) {
         console.log(chalk.red(`ERROR : [${new Date().toLocaleString()}] -> ${error.errorMessage}`));

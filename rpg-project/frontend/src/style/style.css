@@ -49,7 +49,7 @@ body{
 
 
 .h-line{
-    border-bottom: 3px #198754 solid;
+
     margin-bottom: 25px;
 }
 
@@ -92,13 +92,6 @@ img{
   
     image-rendering: pixelated;
 }
-
-
-
-
-
-
-
 
 @keyframes shiny {
     0% {

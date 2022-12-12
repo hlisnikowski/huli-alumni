@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { getIcon } from "../../utils/ImageHelper";
 
 import { Button } from "react-bootstrap";
@@ -10,11 +10,31 @@ import copperCoin from "../../assets/game/items/Misc/Copper_Coin.png";
 
 import Tooltip from "./Tooltip";
 import { getPrice, Item } from "../../utils/ItemHelper";
+import { api, cfg } from "../../utils/Api";
+import { useUserContext } from "../../hooks/UserContext";
 
 const ShopItem = (item: Item) => {
     const [showTooltip, setShowTooltip] = useState(false);
     const price = getPrice(item);
-    const tooltip = () => {};
+    const { setupInventory } = useUserContext();
+
+    const buy = (e: React.MouseEvent) => {
+        e.preventDefault();
+        api.post(
+            "/shop/buy",
+            {
+                vnum: item.vnum,
+            },
+            cfg()
+        )
+            .then((res) => {
+                console.log(res);
+                setupInventory();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
     return (
         <>
@@ -37,9 +57,13 @@ const ShopItem = (item: Item) => {
                 </div>
                 <div className="shop-chain"></div>
                 <div className="shop-buy">
-                    <Button variant="success" type="submit" className="mb-2 w-100 c-btn menu-btn btn-buy">
+                    <Button
+                        onClick={(e) => buy(e)}
+                        variant="success"
+                        type="submit"
+                        className="mb-2 w-100 c-btn menu-btn btn-buy"
+                    >
                         <p className="btn-name">
-                            {" "}
                             <FontAwesomeIcon className="icon" icon={faCoins} /> Buy
                         </p>
                     </Button>

@@ -18,7 +18,16 @@ class UserController {
     async getInventory(req, res, next) {
         try {
             const data = await userService.getInventory(req.user);
-            res.json(data);
+            return res.json(data);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    async sell(req, res, next) {
+        try {
+            await userService.sell(req);
+            return res.send("ok");
         } catch (error) {
             next(error);
         }

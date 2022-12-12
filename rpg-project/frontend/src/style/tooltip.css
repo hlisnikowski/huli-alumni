@@ -1,5 +1,5 @@
 .item-tooltip{
-
+   
     position:absolute;
     z-index: 1000 !important;
     background-image: url("../assets/wood.png");
@@ -11,6 +11,8 @@
 }
 
 .tt-name{
+    margin-bottom: 5px !important;
+    color:#30d66d !important;
     text-align: center;
 }
 
@@ -29,4 +31,26 @@
 .tt-desc p{
     color:black;
     margin: 0;
+}
+
+
+.modal-content{
+    filter: drop-shadow(0px 3px 3px #222);
+    border: 3px solid black !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+    background-image: url("../assets/wood.png");
+}
+
+.modal-header, .modal-body {
+    border-bottom: 2px solid #1B0000;
+    
+}
+
+.modal-title{
+    color:#30d66d;
+}
+
+.modal-footer, .modal-body  {
+    border-top: 2px solid #1B0000;
+    justify-content: center;
 }

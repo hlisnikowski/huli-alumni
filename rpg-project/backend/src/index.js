@@ -12,8 +12,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // MAP
+app.use("/api/v2", routers.apiRouter);
 app.use("/api", routers.publicRouter);
 app.use(tokenAuthentication);
+app.use("/api/shop", routers.shopRouter);
 app.use("/api/user", routers.userRouter);
 
 // UTIL

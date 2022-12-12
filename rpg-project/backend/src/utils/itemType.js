@@ -6,17 +6,18 @@ export const ITEM_TYPE = {
 
 export const EQUIP_TYPE = {
     NONE: 0,
-    ACCESSORIES: 1,
-    SWORD: 2,
-    HELMET: 3,
+    SWORD: 1,
+    HELMET: 2,
+    ARMOR: 3,
     SHIELD: 4,
-    BOOTS: 5,
+    ACCESSORIES: 5,
     GLOVES: 6,
-    ARMOR: 7,
-    LEGS: 8,
+    LEGS: 7,
+    BOOTS: 8,
 };
 
 export const ITEM_VNUM = {
+    POTIONS: 0,
     SWORD: 1000,
     HELMET: 2000,
     ARMOR: 3000,
@@ -26,4 +27,16 @@ export const ITEM_VNUM = {
     LEGS: 7000,
     BOOTS: 8000,
     OTHER: 10000,
+    get: (vnum) => {
+        let type = "None";
+        for (const [key, value] of Object.entries(ITEM_VNUM)) {
+            if (vnum < value) {
+                break;
+            }
+            type = key;
+        }
+        return {
+            type,
+        };
+    },
 };

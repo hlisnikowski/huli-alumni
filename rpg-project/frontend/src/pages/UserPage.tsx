@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import Loading from "../components/MainComponents/Loading";
+import { UserProvider } from "../hooks/UserContext";
 
 const UserPage = () => {
     // <Map />
@@ -10,9 +11,11 @@ const UserPage = () => {
     return (
         <Suspense fallback={<Loading />}>
             <div className="d-flex">
-                <UserBar />
-                <Sidebar />¨
-                <Shop />
+                <UserProvider>
+                    <UserBar />
+                    <Sidebar />
+                    <Shop />
+                </UserProvider>
             </div>
         </Suspense>
     );

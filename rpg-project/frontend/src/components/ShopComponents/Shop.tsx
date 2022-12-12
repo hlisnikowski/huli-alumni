@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import ShopItem from "./ShopItem";
 import "../../style/shop.css";
 import { getItem, getItems, Item, ItemData } from "../../utils/ItemHelper";
+import { useUserContext } from "../../hooks/UserContext";
 
 const Shop = () => {
     const [shopItems, setShopItems] = useState<Item[]>([]);
+
     useEffect(() => {
         const mock: ItemData[] = [
             {
@@ -13,6 +15,10 @@ const Shop = () => {
             },
             {
                 vnum: 2,
+                hash: "hash321",
+            },
+            {
+                vnum: 3,
                 hash: "hash321",
             },
         ];

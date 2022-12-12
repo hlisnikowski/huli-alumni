@@ -5,10 +5,12 @@ import bcrypt from "bcrypt";
 import { generateHashedPassword, generateJWT } from "../utils/util.js";
 import Inventory from "../models/Inventory.js";
 import Equipment from "../models/Equipment.js";
+import inventoryRepository from "../repositories/inventoryRepository.js";
 
 class UserService {
-    constructor(userRepository) {
+    constructor(userRepository, inventoryRepository) {
         this.userRepository = userRepository;
+        this.inventoryRepository = inventoryRepository;
     }
 
     async login(data) {
@@ -55,7 +57,24 @@ class UserService {
             equipment,
         };
     }
+
+    async sell(req) {
+        const user = await this.getUser(req.user.email);
+        await inventoryRepository.remove({
+            userId: user.get("id"),
+            hash: req.body.hash,
+            vnum: req.body.vnum,
+        });
+    }
+
+    async getUser(email) {
+        const user = await userRepository.findByEmail(email);
+        if (!user) {
+            throw new ResponseError(401, "This user doesn't exists.");
+        }
+        return user;
+    }
 }
 
-const userService = new UserService(userRepository);
+const userService = new UserService(userRepository, inventoryRepository);
 export default userService;

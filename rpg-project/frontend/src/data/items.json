@@ -1,5 +1,13 @@
 [
   {
+    "vnum": 0,
+    "item_name": "",
+    "rarity": 0,
+    "type": 0,
+    "subtype": 0,
+    "price": 0
+  },
+  {
     "vnum": 1,
     "item_name": "Red Potion (S)",
     "rarity": 0,
@@ -16,12 +24,52 @@
     "price": 18
   },
   {
+    "vnum": 3,
+    "item_name": "Red Potion (M)",
+    "rarity": 0,
+    "type": 1,
+    "subtype": 0,
+    "price": 50
+  },
+  {
+    "vnum": 4,
+    "item_name": "Blue Potion (M)",
+    "rarity": 0,
+    "type": 1,
+    "subtype": 0,
+    "price": 65
+  },
+  {
+    "vnum": 5,
+    "item_name": "Red Potion (L)",
+    "rarity": 1,
+    "type": 1,
+    "subtype": 0,
+    "price": 105
+  },
+  {
+    "vnum": 6,
+    "item_name": "Blue Potion (L)",
+    "rarity": 1,
+    "type": 1,
+    "subtype": 0,
+    "price": 105
+  },
+  {
     "vnum": 3000,
     "item_name": "Wooden Armor",
     "rarity": 0,
     "type": 2,
-    "subtype": 7,
+    "subtype": 3,
     "price": 20
+  },
+  {
+    "vnum": 4000,
+    "item_name": "Wooden Shield",
+    "rarity": 0,
+    "type": 2,
+    "subtype": 4,
+    "price": 120
   },
   {
     "vnum": 6000,
@@ -36,7 +84,7 @@
     "item_name": "Wooden Shoes",
     "rarity": 0,
     "type": 2,
-    "subtype": 5,
+    "subtype": 8,
     "price": 30
   }
 ]

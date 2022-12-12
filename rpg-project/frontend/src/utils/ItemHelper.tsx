@@ -20,6 +20,7 @@ export type ItemData = {
 const data: Item[] = itemData;
 
 export const getItem = (item: ItemData): Item => {
+    // If item is placeholder
     if (item.vnum >= MAX_VNUM) {
         let i = getEmpty(item.vnum);
         return i;
@@ -50,7 +51,6 @@ export const getPrice = (item: Item): number[] => {
 };
 
 export const addEquipmentEmptySlots = (items: ItemData[]): ItemData[] => {
-    let data: ItemData[] = [...items];
     let types = Array(9).fill(true);
 
     for (let i = 1; i <= items.length; i++) {
@@ -86,6 +86,7 @@ const getEmpty = (vnum: number = 0) => {
 };
 
 const ITEM_VNUM = {
+    POTIONS: 0,
     SWORD: 1000,
     HELMET: 2000,
     ARMOR: 3000,
@@ -96,3 +97,15 @@ const ITEM_VNUM = {
     BOOTS: 8000,
     OTHER: 10000,
 };
+
+export const ITEM_TYPE = {
+    MATERIAL: 0,
+    POTION: 1,
+    EQUIPMENT: 2,
+};
+
+const isItemPlaceholder = (i: ItemData) => {
+    return i.vnum >= MAX_VNUM;
+};
+
+export { isItemPlaceholder };

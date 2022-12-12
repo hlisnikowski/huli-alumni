@@ -4,19 +4,19 @@ const path = "src/assets/game/items";
 
 export const ITEMTYPE = ["Material", "Potion", "Equipment"];
 
-export const EQUIPTYPE = ["None", "Accessories", "Swords", "Helmets", "Shields", "Boots", "Gloves", "Armors", "Legs"];
+export const EQUIPTYPE = ["None", "Swords", "Helmets", "Armors", "Shields", "Accessories", "Gloves", "Legs", "Boots"];
 
 // subtype
 export const EQUIP_ID = {
     NONE: 0,
-    ACCESSORIES: 1,
-    SWORD: 2,
-    HELMET: 3,
+    SWORD: 1,
+    HELMET: 2,
+    ARMOR: 3,
     SHIELD: 4,
-    BOOTS: 5,
+    ACCESSORIES: 5,
     GLOVES: 6,
-    ARMOR: 7,
-    LEGS: 8,
+    LEGS: 7,
+    BOOTS: 8,
 };
 
 const getIcon = (item: Item): string => {
