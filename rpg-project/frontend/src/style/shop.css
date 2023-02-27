@@ -22,7 +22,6 @@
 }
 
 .shop-item{
-
     margin-top: 5px;
     max-height: 350px;
     margin-bottom: 15px;
@@ -31,7 +30,7 @@
 .shop-card{
     background-image: url("../assets/wood.png");
     width: 18rem;
-    height: 13rem;
+    height: 15rem;
     border-radius: 3px;
     margin: 20px 0 0 20px;
     filter: drop-shadow(0px 3px 3px #222);
@@ -41,7 +40,10 @@
 
 
 
+
 .shop-icon{
+    min-width: 44px;
+    max-height: 44px;
     width: 44px;
     background-color: #865936;
     margin : 10px 0 0 10px;
@@ -60,10 +62,9 @@
     margin: 10px;
     border: 3px solid black !important;
     width: 92%;
-    height: 60%;
+    height: 50%;
     margin-bottom: 5px;
     box-shadow:inset 1px 0px 28px 4px #000000;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,12 +78,12 @@
 
 
 .shop-card-top{
-  
     display: flex;
 }
 
 .shop-name{
-    color: black;
+    color: #d1a384 !important;
+    filter: drop-shadow(2px 2px 2px #222);
     margin: 8px 0 0 5px;
 }
 
@@ -112,19 +113,20 @@
 }
 
 .btn-buy{
-    margin-top: 5px;
-    width: 8rem !important;
+    margin: 5px 5px;
+    min-width: 6rem ;
 }
 
 .btn-buy:hover{
     box-shadow:inset 0px 0px 8px 0.01em #000000;
 }
+
 .coins{
     font-size: 19px;
     margin-top: 10px;
     margin-right: 5px;
     display: flex;
-    color: #050505;
+    color: #643f0f;
 
 }
 

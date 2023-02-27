@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ShopItem from "./ShopItem";
-import "../../style/shop.css";
+
 import { getItem, getItems, Item, ItemData } from "../../utils/ItemHelper";
 import { useUserContext } from "../../hooks/UserContext";
 
@@ -21,7 +21,12 @@ const Shop = () => {
                 vnum: 3,
                 hash: "hash321",
             },
+            {
+                vnum: 4,
+                hash: "hash321",
+            },
         ];
+
         setShopItems(getItems(mock));
     }, []);
 

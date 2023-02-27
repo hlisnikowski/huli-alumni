@@ -1,0 +1,46 @@
+[
+  {
+    "vnum": 11,
+    "spell_name": "Healing (F)",
+    "mana_usage": 5,
+    "trigger_chance": 25,
+    "description": "Heal yourself for 10% of HP.",
+    "same_card_count": 3,
+    "upgrade_vnum": 12,
+    "upgrade_recipe": 1,
+    "type": 1
+  },
+  {
+    "vnum": 12,
+    "spell_name": "Healing (D)",
+    "mana_usage": 7,
+    "trigger_chance": 30,
+    "description": "Heal yourself for 15% of HP.",
+    "same_card_count": 15,
+    "upgrade_vnum": 0,
+    "upgrade_recipe": 0,
+    "type": 1
+  },
+  {
+    "vnum": 21,
+    "spell_name": "Meteorite (F)",
+    "mana_usage": 10,
+    "trigger_chance": 20,
+    "description": "Deals 150% of your damage.",
+    "same_card_count": 3,
+    "upgrade_vnum": 22,
+    "upgrade_recipe": 1,
+    "type": 2
+  },
+  {
+    "vnum": 22,
+    "spell_name": "Meteorite (D)",
+    "mana_usage": 13,
+    "trigger_chance": 25,
+    "description": "Deals 180% of your damage.",
+    "same_card_count": 15,
+    "upgrade_vnum": 0,
+    "upgrade_recipe": 0,
+    "type": 2
+  }
+]

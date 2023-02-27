@@ -1,24 +1,39 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useContext, useMemo } from "react";
+import "../style/shop.css";
 import Loading from "../components/MainComponents/Loading";
-import { UserProvider } from "../hooks/UserContext";
+import { UserProvider, useUserContext } from "../hooks/UserContext";
+import GameWindow from "../components/GameWindow";
+import { EntityProvider } from "../hooks/EntityContext";
+import ETC from "../components/Menu/ETC";
 
 const UserPage = () => {
     // <Map />
-    const Shop = lazy(() => wait(1000).then(() => import("../components/ShopComponents/Shop")));
+    // | wait(1000).then(() =>
     const UserBar = lazy(() => import("../components/User/UserBar"));
     const Sidebar = lazy(() => import("../components/Sidebar"));
 
+    // Render specific view ("Shop, Adventure ...")
+
+    //SHOP
     return (
         <Suspense fallback={<Loading />}>
-            <div className="d-flex">
-                <UserProvider>
-                    <UserBar />
-                    <Sidebar />
-                    <Shop />
-                </UserProvider>
-            </div>
+            <UserProvider>
+                <EntityProvider>
+                    <div className="d-flex">
+                        <Sidebar />
+                        <GameWindow />
+                        <UserBar />
+                    </div>
+                </EntityProvider>
+            </UserProvider>
         </Suspense>
     );
+};
+
+export const VIEW = {
+    SHOP: "shop",
+    ADVENTURE: "adventure",
+    SPELL: "spell",
 };
 
 function wait(time: number) {

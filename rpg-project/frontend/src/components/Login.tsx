@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 import { api } from "../utils/Api";
+import { useUserContext } from "../hooks/UserContext";
 
 const Login = () => {
     const [passwordShown, setPasswordShown] = useState(false);
@@ -18,7 +19,8 @@ const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (loginSuccess) {
+        if (loginSuccess || localStorage.getItem("login") == "true") {
+            localStorage.setItem("login", "true");
             navigate("/user");
         }
     }, [loginSuccess]);

@@ -1,14 +1,18 @@
 
 .game{
     display: flex;
-  
+    z-index: 10;
 }
 
 .btn-name{
-    font-size: 18px;
+    font-size: 16px;
     padding: 0;
-    margin: 0;
+    margin: 0px;
     color: hsl(120, 100%, 7%);
+}
+
+.shop-buy .btn-name{
+    margin-top: -3px;
 }
 
 .bar-line{
@@ -32,13 +36,22 @@ h3{
 }
 
 .menu-btn{
-    margin: 10px 10px;
-    width: 90% !important;
+    margin: 10px 0px 0px -8px;
+    width: 108%;
     filter: drop-shadow(0px 3px 3px #222);
+}
+
+.sidebar-name {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: hsl(152, 72%, 52%);
+    text-align: center;
+    -webkit-text-stroke: 1px black;
 }
 
 .icon{
   padding-bottom: 3px;
+
 }
 
 .signout{

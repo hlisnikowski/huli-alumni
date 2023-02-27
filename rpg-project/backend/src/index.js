@@ -17,6 +17,7 @@ app.use("/api", routers.publicRouter);
 app.use(tokenAuthentication);
 app.use("/api/shop", routers.shopRouter);
 app.use("/api/user", routers.userRouter);
+app.use("/api/entity", routers.entityRouter);
 
 // UTIL
 app.use(errorHandler);

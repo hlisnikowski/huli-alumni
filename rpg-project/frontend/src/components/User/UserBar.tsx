@@ -1,18 +1,24 @@
-import React from "react";
-
 import "../../style/userbar.css";
-import sc from "../../assets/game/items/Misc/Silver_Coin.png";
-import gc from "../../assets/game/items/Misc/Golden_Coin.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBolt, faGem, faFeather } from "@fortawesome/free-solid-svg-icons";
+import { useUserContext } from "../../hooks/UserContext";
 
 const UserBar = () => {
+    const { money } = useUserContext();
+
     return (
-        <div className="top-bar">
-            <div className="user-info">
-                <p className="name-tag">Mirek</p>
-                <img className="left" src={gc} alt="" />
-                <p>1</p>
-                <img src={sc} alt="" />
-                <p>25</p>
+        <div className="top-bar d-flex">
+            <h4>THE FOREST </h4>
+            <div className="consumables">
+                <div className="tab energy">
+                    <FontAwesomeIcon icon={faBolt} /> <p> Energy 25/25</p>
+                </div>
+                <div className="tab gems">
+                    <FontAwesomeIcon icon={faGem} /> <p> GEMS 15</p>
+                </div>
+                <div className="tab feather">
+                    <FontAwesomeIcon icon={faFeather} /> <p> Feathers 75</p>
+                </div>
             </div>
         </div>
     );

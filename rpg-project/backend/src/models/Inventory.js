@@ -14,6 +14,26 @@ const Inventory = db.define(
             type: STRING(50),
             allowNull: false,
         },
+        hp: {
+            type: INTEGER,
+            allowNull: false,
+            defaultValue: 0,
+        },
+        atk: {
+            type: INTEGER,
+            allowNull: false,
+            defaultValue: 0,
+        },
+        def: {
+            type: INTEGER,
+            allowNull: false,
+            defaultValue: 0,
+        },
+        crit: {
+            type: INTEGER,
+            allowNull: false,
+            defaultValue: 0,
+        },
     },
     { timestamps: false }
 );

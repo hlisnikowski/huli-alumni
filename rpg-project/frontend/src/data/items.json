@@ -80,6 +80,22 @@
     "price": 40
   },
   {
+    "vnum": 7000,
+    "item_name": "Wooden Legs",
+    "rarity": 0,
+    "type": 2,
+    "subtype": 7,
+    "price": 50
+  },
+  {
+    "vnum": 7005,
+    "item_name": "Bronze Legs",
+    "rarity": 0,
+    "type": 2,
+    "subtype": 7,
+    "price": 180
+  },
+  {
     "vnum": 8000,
     "item_name": "Wooden Shoes",
     "rarity": 0,

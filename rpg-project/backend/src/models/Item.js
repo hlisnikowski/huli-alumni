@@ -36,6 +36,16 @@ const Item = db.define(
             allowNull: false,
             defaultValue: 0,
         },
+        level: {
+            type: INTEGER(4),
+            allowNull: false,
+            defaultValue: 0,
+        },
+        // avg: {
+        //     type: BOOLEAN,
+        //     allowNull: false,
+        //     defaultValue: 0,
+        // },
     },
     { timestamps: false }
 );

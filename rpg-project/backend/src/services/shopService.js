@@ -1,13 +1,15 @@
 import shopRepository from "../repositories/shopRepository.js";
 import userRepository from "../repositories/userRepository.js";
 import inventoryRepository from "../repositories/inventoryRepository.js";
+import itemRepository from "../repositories/itemRepository.js";
 import ResponseError from "../utils/ResponseError.js";
 
 class ShopService {
-    constructor(shopRepository, userRepository, inventoryRepository) {
+    constructor(shopRepository, userRepository, inventoryRepository, itemRepository) {
         this.shopRepository = shopRepository;
         this.userRepository = userRepository;
         this.inventoryRepository = inventoryRepository;
+        this.itemRepository = itemRepository;
     }
 
     async buy(res) {
@@ -24,6 +26,13 @@ class ShopService {
         if (!shopItem) {
             throw new ResponseError(404, "This item doesn't exist in the shop.");
         }
+        const userMoney = user.get("money");
+        const itemPrice = await itemRepository.getItemPrice(shopItem.get("vnum"));
+        if (userMoney < itemPrice) throw new ResponseError(404, "Not enough money.");
+
+        user.update({
+            money: userMoney - itemPrice,
+        });
 
         await inventoryRepository.add({
             vnum: res.body.vnum,
@@ -32,5 +41,5 @@ class ShopService {
     }
 }
 
-const shopService = new ShopService(shopRepository, userRepository);
+const shopService = new ShopService(shopRepository, userRepository, inventoryRepository, itemRepository);
 export default shopService;

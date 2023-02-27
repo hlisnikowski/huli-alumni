@@ -3,6 +3,7 @@ body{
 }
 
 .top-bar{
+    z-index: 11;
     position: absolute;
     background:url("../assets/wood.png");
     border-bottom: 3px solid black;
@@ -20,14 +21,14 @@ body{
 .user-info p{
     font-size: 18px;
     -webkit-text-stroke: 1px black;
-    color: #5DDE87;
+    color: #e2c7b5;
 }
 
 
 .user-info .name-tag{
     text-align: left;
-    margin: 5px 0  0 280px;
-    color: #5DDE87;
+    margin: 5px 10px  0 280px;
+    color: #e2c7b5;
     font-size: 25px;
     -webkit-text-stroke: 1px black;
     filter: drop-shadow(0px 5px 5px #222);
@@ -47,3 +48,51 @@ body{
 .left{
     margin-left: 10px;
 }
+
+.top-bar h4{
+    margin: 9px 0 0 20px;
+    position: absolute;
+    color: #e2c7b5 ;
+    font-size: 25px;
+    -webkit-text-stroke: 1px black;
+    filter: drop-shadow(0px 5px 5px #222);
+}
+
+.consumables{
+    display: flex;
+    margin-left: 272px;
+    margin-top: 7px;
+}
+
+.tab{
+    margin-right: 5px;
+    padding: 2px;
+    display: flex;
+    height: 35px;
+    filter: drop-shadow(0px 3px 3px #222);
+    border: 3px solid black !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;  
+}
+
+.energy{
+ 
+    background-color: #C5A63E;
+}
+
+.gems{
+  
+    background-color: #c3ecff;
+}
+
+.feather{
+    background-color: #03d8aa;
+}
+
+
+.tab .fa-bolt, .tab .fa-gem, .tab .fa-feather{
+    margin:5px 4px 0px 2px
+}
+
+
+
+

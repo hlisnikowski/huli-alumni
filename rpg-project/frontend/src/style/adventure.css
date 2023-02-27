@@ -1,0 +1,206 @@
+.entity-card{
+    background-image: url("../assets/wood.png");
+    width: 34rem;
+    height: 10rem;
+    border-radius: 3px;
+    margin: 70px 15px 10px 20px;
+    filter: drop-shadow(0px 3px 3px #222);
+    border: 3px solid black !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+}
+
+.entity-list{   
+        margin: 20px 0 0 20px ;
+        height: 94vh;
+        overflow-y: scroll;
+        align-content: flex-start; 
+        display: flex;
+        flex-wrap: wrap;
+}
+
+.entity-list::-webkit-scrollbar {
+  display: none;
+}
+
+.entity-icon{
+   
+    width: 130px;
+    height: 130px;
+    background-color: #865936;
+    margin : 10px 0 0 10px;
+    padding: 3px;
+    border: 3px solid black !important;
+    box-shadow:inset 0px 0px 20px 0.01em #000000; border-radius: 5px;
+    filter: drop-shadow(0px 3px 3px #222);
+    background-image: url("../assets/nature-bg.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.entity-loot{
+    margin : 10px -2px 0 10px;
+    padding: 3px;
+    border: 3px solid black !important;
+    background-color: #CA9875;
+    border-radius: 5px;
+    filter: drop-shadow(0px 3px 3px #222);
+        width: 130px;
+        height: 130px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        align-content: flex-start; 
+        padding-bottom: 10px;
+        box-shadow:inset 1px 0px 25px 0.01rem #000000;
+}
+
+.fight-result .buff-icon{
+    width: 48px;
+    height: 48px;
+    
+}
+
+.entity-loot::-webkit-scrollbar {
+    display: none;
+}
+
+.entity-loot-icon{
+        width: 44px;
+        background-color: #865936;
+        margin : 10px 0 0 10px;
+        padding: 3px;
+        border: 3px solid black !important;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+        border-radius: 5px;
+        filter: drop-shadow(0px 3px 3px #222);
+}
+
+
+.entity-money{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+    border-radius: 5px;
+    filter: drop-shadow(0px 3px 3px #222);
+    background-image:linear-gradient(rgba(59, 41, 15, 0.5), rgba(0, 0, 0, 0)), url("../assets/wood.png") ;
+    position: absolute;
+    top: -40px;
+    width: 102%;
+    left: -4px;
+    padding-left: 5px;
+    border: 3px solid black !important;
+    border-radius: 5px;
+}
+
+.entity-money .tt-bottom{
+    float: right !important;
+    margin: 5px 5px -5px 0;
+}
+.entity-name {
+    color: #C99775;
+    position: absolute;
+    left: 10px;
+    top: 4px;
+}
+
+.entity-btn{
+    margin: 10px;
+    height: 50px;
+    width: 240px;
+    color:black;
+    background-color: #c5a63e;
+}
+
+.entity-btn:hover{
+    background-color: #f1cf5e;
+    color:black;
+}
+
+.entity-stats{
+    margin-left : 10px;
+    display: flex;
+    color: #D1A284;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid black !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+    width: 240px;
+    border-radius: 5px;
+    background-color: #198754;
+    filter: drop-shadow(0px 3px 3px #222);
+}
+
+.entity-stats p{
+    color: black;
+    margin: 5px 2px 5px 5px;
+}
+
+.modal-title h4{
+    color: red;
+}
+
+
+.fight-result{
+    margin : 5px;
+    border: 3px solid black !important;
+    background-color: #CA9875;
+    border-radius: 5px;
+    filter: drop-shadow(0px 3px 3px #222);
+    max-height: 250px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow-y: scroll;
+    align-content: flex-start; 
+    padding: 10px 10px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+   
+}
+
+.fight-title{
+    color: #D1A384;
+    text-align: center; 
+    margin: 0px 0px 10px 0px;  
+    border-bottom: 2px dashed #D1A384;
+    filter: drop-shadow(0px 3px 3px #222);
+}
+
+
+.fight-loot{
+    margin: 5px 5px 15px 5px;
+    padding: 3px;
+    border: 3px solid black !important;
+    background-color: #CA9875;
+    border-radius: 5px;
+    filter: drop-shadow(0px 3px 3px #222);
+      
+        height: 75px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        align-content: flex-start; 
+        padding-bottom: 10px;
+        box-shadow:inset 1px 0px 25px 0.01rem #000000;
+}
+
+.fight-modal{
+    flex-wrap: wrap !important;
+}
+
+
+.fight-result p{
+    margin: 5px 10px;
+}
+
+.fight-result .fight-player{
+    color:#772014;
+}
+.fight-result .fight-entity{
+    color:#0e4d2f;
+}
+
+
+.fight-result::-webkit-scrollbar, .fight-loot::-webkit-scrollbar{
+    display: none;
+}
+
+

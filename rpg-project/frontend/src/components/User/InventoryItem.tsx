@@ -1,10 +1,10 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useUserContext } from "../../hooks/UserContext";
+import { BAG_TOOLTIP_POS, EQUIP_TOOLTIP_POS } from "../../settings/Settings";
 import { api, cfg } from "../../utils/Api";
 import { getIcon, ITEMTYPE } from "../../utils/ImageHelper";
 import { isItemPlaceholder, Item, ItemData, ITEM_TYPE, MAX_VNUM } from "../../utils/ItemHelper";
-import Tooltip from "../ShopComponents/Tooltip";
 import { TooltipPosition } from "./Inventory";
 
 type InvProp = {
@@ -13,10 +13,11 @@ type InvProp = {
     setTool: Dispatch<SetStateAction<TooltipPosition>>;
     button_type: string;
     setItem: Dispatch<SetStateAction<Item>>;
+    storage: string;
 };
 
 // data will be used later with interaction
-const InventoryItem = ({ data, item, setTool, button_type, setItem }: InvProp) => {
+const InventoryItem = ({ data, item, setTool, button_type, setItem, storage }: InvProp) => {
     const { setupInventory } = useUserContext();
 
     // Show mouse pointer if item is not placeholder
@@ -49,11 +50,24 @@ const InventoryItem = ({ data, item, setTool, button_type, setItem }: InvProp) =
     };
 
     const unequip = () => {
-        console.log(`Unequip item: ${item.item_name} : ${item.vnum} : ${data.hash}`);
+        api.post(
+            "/user/unequip",
+            {
+                vnum: data.vnum,
+                subtype: item.subtype,
+            },
+            cfg()
+        )
+            .then((res) => {
+                handleClose();
+                setupInventory();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     const sell = (e: React.MouseEvent) => {
-        e.preventDefault();
         api.post(
             "/user/sell",
             {
@@ -71,54 +85,99 @@ const InventoryItem = ({ data, item, setTool, button_type, setItem }: InvProp) =
             });
     };
 
+    const sellAll = (e: React.MouseEvent) => {
+        api.post(
+            "/user/sell-all",
+            {
+                vnum: data.vnum,
+            },
+            cfg()
+        )
+            .then((res) => {
+                handleClose();
+                setupInventory();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
     const equip = () => {
-        console.log(`Equip item: ${item.item_name} : ${item.vnum} : ${data.hash}`);
+        api.post(
+            "/user/equip",
+            {
+                vnum: data.vnum,
+                hash: data.hash,
+                subtype: item.subtype,
+            },
+            cfg()
+        )
+            .then((res) => {
+                handleClose();
+                setupInventory();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     const use = () => {
         console.log(`Using item: ${item.item_name} : ${item.vnum} : ${data.hash}`);
     };
 
+    function drag(ev: React.DragEvent<HTMLImageElement>) {
+        setItem({} as Item);
+        ev.dataTransfer.setData("hash", data.hash);
+        ev.dataTransfer.setData("vnum", data.vnum.toString());
+        ev.dataTransfer.setData("subtype", item.subtype.toString());
+        ev.dataTransfer.setData("storage", storage);
+    }
+
     return (
         <>
             <img
+                onDragStart={(e) => drag(e)}
                 style={{ cursor: cursor }}
-                onMouseEnter={() => setItem(item)}
-                onMouseLeave={() => {
-                    setItem({} as Item);
-                    if (!canSell)
-                        setTool({
-                            x: "11px",
-                            y: "455px",
-                        } as TooltipPosition);
+                onMouseEnter={() => {
+                    if (data.vnum >= MAX_VNUM) return;
+                    // canSell = Is equipment
+                    if (!canSell) setTool(EQUIP_TOOLTIP_POS);
                     else {
-                        setTool({
-                            x: "10px",
-                            y: "170px",
-                        } as TooltipPosition);
+                        setTool(BAG_TOOLTIP_POS);
                     }
+                    setItem(item);
+                }}
+                onMouseLeave={() => {
+                    if (data.vnum >= MAX_VNUM) return;
+                    // To hide Tooltip
+                    setItem({} as Item);
                 }}
                 className="shop-icon"
                 src={getIcon(item)}
                 onClick={() => handleShow()}
             />
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal dialogClassName="custom-dialog" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{item.item_name}</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose} className="c-btn menu-btn btn-buy">
+                    <Button variant="secondary" onClick={handleClose} className="c-btn  btn-buy">
                         Close
                     </Button>
-                    <Button variant="primary" onClick={(e) => interact(e)} className="c-btn menu-btn btn-buy">
+                    <Button variant="primary" onClick={(e) => interact(e)} className="c-btn btn-buy">
                         {canUse ? "Use" : button_type}
                     </Button>
                     {canSell && (
-                        <Button variant="primary" onClick={(e) => sell(e)} className="c-btn menu-btn btn-buy">
-                            Sell
-                        </Button>
+                        <>
+                            <Button variant="primary" onClick={(e) => sell(e)} className="c-btn  btn-buy">
+                                Sell
+                            </Button>
+                            <Button variant="primary" onClick={(e) => sellAll(e)} className="c-btn  btn-buy">
+                                Sell All
+                            </Button>
+                        </>
                     )}
                 </Modal.Footer>
             </Modal>

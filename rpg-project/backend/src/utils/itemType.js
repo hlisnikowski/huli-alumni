@@ -40,3 +40,34 @@ export const ITEM_VNUM = {
         };
     },
 };
+
+export const SPELLS = {
+    HEALING: {
+        msg: "heals for {0}",
+        multi: [10, 15],
+        // (5 / 100) * 25 [max_health]
+        getHeal(level, max_hp) {
+            return Math.round((this.multi[level - 1] / 100) * max_hp);
+        },
+        getMsg(level, current_hp, max_hp) {
+            let heal = this.getHeal(level, max_hp);
+            return this.msg.replace("{0}", `${heal}\nHP: ${current_hp + heal}`);
+        },
+    },
+
+    METEORITE: {
+        msg: "casts meteorite\nwhich deals {0}",
+        multi: [150, 180],
+        //(180:100)*20 =
+        getDamage(level, atk) {
+            return Math.round((this.multi[level - 1] / 100) * atk);
+        },
+        getMsg(level, attack) {
+            return this.msg.replace("{0}", this.getDamage(level, attack));
+        },
+    },
+};
+
+export const getSubtypeVnum = (vnum) => {
+    return Math.floor(vnum / 1000);
+};

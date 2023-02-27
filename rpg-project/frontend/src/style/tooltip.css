@@ -1,10 +1,9 @@
 .item-tooltip{
-   
     position:absolute;
     z-index: 1000 !important;
     background-image: url("../assets/wood.png");
     width: 225px;
-    height: 340px;
+    height: auto;
     filter: drop-shadow(0px 3px 3px #222);
     border: 3px solid black !important;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
@@ -12,7 +11,8 @@
 
 .tt-name{
     margin-bottom: 5px !important;
-    color:#30d66d !important;
+    color: #d1a284 !important;
+    filter: drop-shadow(0px 3px 3px #222);
     text-align: center;
 }
 
@@ -23,9 +23,24 @@
     margin: 10px;
     border: 3px solid black !important;
     width: 92%;
-    height: 75%;
+    height: auto;
     margin-bottom: 5px;
     box-shadow:inset 1px 0px 20px 4px #000000;
+}
+
+
+
+.tt-price{
+    height: 45px; 
+    margin-left: -2px;
+    margin-top: -10px;
+  
+}
+
+.tt-bottom p{
+    margin-top: -4px;
+    margin-left: -5px;
+    filter: drop-shadow(0px 3px 3px #222);
 }
 
 .tt-desc p{
@@ -41,16 +56,19 @@
     background-image: url("../assets/wood.png");
 }
 
+
 .modal-header, .modal-body {
-    border-bottom: 2px solid #1B0000;
-    
+    border-bottom: 2px solid #1B0000;  
 }
 
 .modal-title{
-    color:#30d66d;
+    color: #d1a384;
+    filter: drop-shadow(0px 3px 3px #222);
 }
 
 .modal-footer, .modal-body  {
+    display: flex !important;
+    flex-wrap: nowrap;
     border-top: 2px solid #1B0000;
     justify-content: center;
 }

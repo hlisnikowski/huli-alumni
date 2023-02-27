@@ -1,4 +1,5 @@
 import { Item, MAX_VNUM } from "./ItemHelper";
+import { SPELL_TYPE } from "./SpellHelper";
 
 const path = "src/assets/game/items";
 
@@ -35,4 +36,20 @@ const getIconName = (item: Item): string => {
     return vnum + "_" + item.rarity + ".png";
 };
 
-export { getIcon };
+const getBuffIcon = (type: string): string => {
+    return "src/assets/game/buffs/" + type + ".png";
+};
+
+const getSpellIcon = (vnum: number): string => {
+    let icon = "";
+    let num = Math.floor(vnum / 10);
+    for (const [key, value] of Object.entries(SPELL_TYPE)) {
+        if (value == num) {
+            icon = key.toLocaleLowerCase();
+            break;
+        }
+    }
+    return "src/assets/game/buffs/" + icon + ".png";
+};
+
+export { getIcon, getBuffIcon, getSpellIcon };

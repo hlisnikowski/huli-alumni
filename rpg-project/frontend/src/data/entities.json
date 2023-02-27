@@ -1,0 +1,50 @@
+[
+  {
+    "vnum": 1,
+    "name": "Sword Man",
+    "level": 1,
+    "hp": 20,
+    "atk": 3,
+    "def": 1,
+    "crit": 25,
+    "map": 1,
+    "loot": 1,
+    "energy": 1
+  },
+  {
+    "vnum": 2,
+    "name": "Spear Man",
+    "level": 2,
+    "hp": 25,
+    "atk": 5,
+    "def": 1,
+    "crit": 2,
+    "map": 1,
+    "loot": 2,
+    "energy": 1
+  },
+  {
+    "vnum": 3,
+    "name": "Archer",
+    "level": 3,
+    "hp": 28,
+    "atk": 7,
+    "def": 0,
+    "crit": 5,
+    "map": 1,
+    "loot": 3,
+    "energy": 2
+  },
+  {
+    "vnum": 4,
+    "name": "Shield Man",
+    "level": 3,
+    "hp": 35,
+    "atk": 4,
+    "def": 5,
+    "crit": 0,
+    "map": 1,
+    "loot": 4,
+    "energy": 2
+  }
+]

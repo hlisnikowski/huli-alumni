@@ -5,6 +5,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import UserPage from "./pages/UserPage";
 import Loading from "./components/MainComponents/Loading";
+import { UserProvider } from "./hooks/UserContext";
+import Map from "./components/Map";
 
 function App() {
     return (
@@ -12,7 +14,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/user" element={<UserPage />} />
-            <Route path="/load" element={<Loading />} />
+            <Route path="/map" element={<Map />} />
         </Routes>
     );
 }

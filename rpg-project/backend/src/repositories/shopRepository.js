@@ -1,4 +1,4 @@
-import { Shop } from "../models/Models.js";
+import { Item, Shop } from "../models/Models.js";
 
 class ShopRepository {
     async findAll() {

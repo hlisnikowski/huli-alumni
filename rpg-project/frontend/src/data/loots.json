@@ -1,0 +1,111 @@
+[
+    {
+      "name" : "Sword Man",
+      "id" : 1,
+      "money" : 15,
+      "loot" : [
+        {
+            "vnum" : 1,
+            "chance" : 1000
+        },
+        {
+            "vnum" : 2,
+            "chance" : 1000
+        },
+        {
+            "vnum" : 7000,
+            "chance" : 1000
+        },
+        {
+            "vnum" : 4000,
+            "chance" : 1000
+        },
+        {
+            "vnum" : 8000,
+            "chance" : 1000
+        },
+        {
+            "vnum" : 6000,
+            "chance" : 1000
+        },
+        {
+            "vnum" : 3000,
+            "chance" : 1000
+        }
+      ]
+    }
+    ,
+    {
+        "name" : "Spear Man",
+        "id" : 2,
+        "money" : 70,
+        "loot" : [
+            {
+                "vnum" : 3,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 4000,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 8000,
+                "chance" : 1000
+            }    
+        ]
+      },
+      {
+        "name" : "Archer Man",
+        "id" : 3,
+        "money" : 175,
+        "loot" : [
+            {
+                "vnum" : 1,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 2,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 4000,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 7000,
+                "chance" : 1000
+            }    
+        ]
+      },
+      {
+        "name" : "Shield Man",
+        "id" : 4,
+        "money" : 310,
+        "loot" : [
+            {
+                "vnum" : 1,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 2,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 4000,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 7000,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 3000,
+                "chance" : 1000
+            },
+            {
+                "vnum" : 6000,
+                "chance" : 1000
+            }          
+        ]
+      }
+  ]
