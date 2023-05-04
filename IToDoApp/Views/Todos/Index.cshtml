@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    IHtmlContent TernaryRaw(string f, string s, bool flag) => Html.Raw(flag ? f : s);
+    var GetIcon = (Todo todo, string icon) => Html.Raw($"<i class=\"fa-solid {icon} {(!todo.Done ? "clr-red" : "")} fa-lg\"></i>");
+}
+
+@using IToDoApp.Models.Entities
+@using Microsoft.AspNetCore.Html;
+
+@model List<Todo>
+
+    <div class="row d-flex">
+    @foreach(var todo in Model){
+       
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+ 
+        <div class=" position-relative card c-card text-white todo-card bg-@TernaryRaw("success","danger",todo.Done) mb-3">
+                 <a class="delete-btn" asp-action="Delete" asp-route-id="@todo.Id">
+                     @GetIcon(todo,"fa-trash")
+                </a>
+                <a class="check-btn" asp-action="Check" asp-route-id="@todo.Id">
+                    @GetIcon(todo,"fa-circle-check")
+                </a>
+                 <a class="edit-btn" asp-action="Edit" asp-route-id="@todo.Id">
+                    @GetIcon(todo,"fa-pen-to-square")
+                  </a>
+
+                  
+        <div class="card-header">@TernaryRaw("Done","Incomplete",todo.Done)</div>
+        <div class="card-body">
+        <h5 class="card-title">@todo.Title</h5>
+        <p class="card-text">@todo.Description</p>
+        </div>
+        </div> 
+        </div>
+         
+    }
+    </div>

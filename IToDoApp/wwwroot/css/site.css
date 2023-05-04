@@ -1,0 +1,135 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+body, html {
+    background-color: #2A9D8F
+}
+
+header {
+    background-color: #264653;
+}
+
+
+body {
+  
+  margin-bottom: 60px;
+}
+
+.c-navbar {
+    border-bottom: 2px solid black;
+   box-shadow: 1px 3px 5px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.c-login-card {
+    border: 3px solid #E76F51;
+    background-color: #E9C46A;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.c-card {
+    margin:0px auto ;
+    filter: drop-shadow(0px 3px 3px #222);
+    width: 20rem;
+    border: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.c-login-card button {
+    border: 2px solid black;
+    border-radius: 3px 3px;
+    padding: 5px 10px;
+    background-color: #2A9D8F;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+.c-btn {
+    border: 2px solid black;
+    border-radius: 3px 3px;
+    padding: 5px 10px;
+    background-color: #2A9D8F;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+
+
+
+
+@media screen and (max-width:550px) {
+    .c-card {
+        max-width: 25rem;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:550px) {
+    .c-card {
+        justify-content:center;
+        max-width: 18rem;
+    }
+}
+
+.delete-btn {
+    color: #1C3636;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+a, i{
+    text-decoration:none;
+}
+
+.check-btn {
+    color: #1C3636;
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    color: #1C3636;
+    position: absolute;
+    right: 55px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.clr-red {
+    color: hsl(0 59% 25%);
+}
+
+
+.delete-btn i:hover, .check-btn i:hover, .edit-btn i:hover{
+    color:white !important;  
+}
+
+.delete-btn a:hover, .check-btn a:hover, .edit-btn a:hover {
+    color: white !important;
+}

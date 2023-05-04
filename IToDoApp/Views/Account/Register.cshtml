@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IToDoApp.Models.ModelViews.RegisterVM
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="card c-login-card">
+                <div class="card-header text-center">
+                    <h4>Registrace</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Register">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="EmailAddress"></label>
+                            <input asp-for="EmailAddress" class="form-control" required />
+                            <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password">Heslo:</label>
+                            <input asp-for="Password" class="form-control" required />
+                             <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                         <div class="form-group">
+                            <label asp-for="PasswordConfirm">Heslo Znovu:</label>
+                            <input asp-for="PasswordConfirm" class="form-control" required />
+                            <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                        </div>
+                        <div class="text-center mt-2">
+                            <button type="submit" >Registrovat se</button>
+                        </div>
+                    </form>
+                @if (TempData["Error"] != null)
+                {
+                        <div class="col-md-12 text-center mt-2 alert-danger">
+                               <span>@Html.Raw(TempData["Error"])</span>               
+                        </div>
+                }
+                </div>
+            </div>
+        </div>
+    </div>

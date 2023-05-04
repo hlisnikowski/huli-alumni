@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using IToDoApp.Models.ModelViews;
+
+@model EditTodoVM
+<form asp-action="Edit" method="post">
+<div class="">
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" class="form-control" required />
+                <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+<div class="">
+                <label asp-for="Description">Description</label>
+                <input asp-for="Description" class="form-control" required />
+                <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+<div class="form-check form-switch mt-2">
+                <label class="form-check-label" asp-for="Done">Done</label>
+                @Html.CheckBoxFor(m => m.Done, new { @class = "form-check-input"})
+                <span asp-validation-for="Done" class="text-danger"></span>
+</div>
+<div class="">
+                <label asp-for="Start">Start</label>
+                <input type="date" asp-for="Start" class="form-control" required />
+                <span asp-validation-for="Start" class="text-danger"></span>
+</div>
+<div class="">
+                <label asp-for="Finish">Finish</label>
+                <input type="date" asp-for="Finish" class="form-control" required />
+                <span asp-validation-for="Finish" class="text-danger"></span>
+</div>
+<button class="mt-2 c-btn">Save</button>
+</form>
+<style>
+    label{
+        color:white;
+    }
+</style>

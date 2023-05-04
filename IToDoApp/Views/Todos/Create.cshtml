@@ -1,0 +1,42 @@
+﻿@using IToDoApp.Models.ModelViews;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var date = DateTime.Now.ToString("yyyy-MM-dd");
+}
+@model CreateTodoVM
+
+<form asp-action="Create" method="post">
+<div class="">
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" class="form-control" required />
+                <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+<div class="">
+                <label asp-for="Description">Description</label>
+                <input asp-for="Description" class="form-control" required />
+                <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+<div class="form-check form-switch mt-2">
+                <label class="form-check-label" asp-for="Done">Done</label>
+        @Html.CheckBoxFor(m => m.Done, new { @class = "form-check-input"})
+                <span asp-validation-for="Done" class="text-danger"></span>
+</div>
+<div class="">
+                <label asp-for="Start">Start</label>
+                <input type="date" asp-for="Start" value="@date" class="form-control" required />
+                <span asp-validation-for="Start" class="text-danger"></span>
+</div>
+<div class="">
+                <label asp-for="Finish">Finish</label>
+                <input type="date" value="@date" asp-for="Finish" class="form-control" required />
+                <span asp-validation-for="Finish" class="text-danger"></span>
+</div>
+<button class="c-btn mt-2">Add</button>
+</form>
+<style>
+    label{
+        color:white;
+    }
+</style>
