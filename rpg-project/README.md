@@ -26,11 +26,4 @@ ADVENTURE
 ![adventure](adventure.png)
 
 ```
-SHOP
-```
 
-![shop_v2](shop_v2.png)
-
-```
-
-```
